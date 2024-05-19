@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marto Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <button id="mainButton">marto is not sigma</button>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('mainButton').addEventListener('click', function() {
+            const outputDiv = document.getElementById('output');
+            outputDiv.textContent = ''; // Clear previous content
+            
+            // Simulate printing "WHAT DID YOU SAY" 200 times
+            for (let i = 0; i < 200; i++) {
+                outputDiv.textContent += 'WHAT DID YOU SAY\n';
+            }
+
+            // Create buttons after printing
+            const okButton = document.createElement('button');
+            okButton.textContent = 'OK OK HE IS';
+            okButton.addEventListener('click', function() {
+                outputDiv.textContent = ''; // Clear the output
+                outputDiv.textContent = 'Simulation complete.';
+            });
+
+            const noButton = document.createElement('button');
+            noButton.textContent = 'no';
+            noButton.addEventListener('click', function() {
+                outputDiv.textContent = ''; // Clear previous content
+                // Simulate printing "yes he is" 100 times
+                for (let i = 0; i < 100; i++) {
+                    outputDiv.textContent += 'yes he is\n';
+                }
+            });
+
+            // Append buttons to the output div
+            outputDiv.appendChild(okButton);
+            outputDiv.appendChild(noButton);
+        });
+    </script>
+</body>
+</html>
